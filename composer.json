@@ -1,5 +1,5 @@
 {
-    "name": "mitirrli/tpQuery",
+    "name": "mitirrli/tp-query",
     "description": "model query for thinkphp.",
     "type": "composer-plugin",
     "license": "MIT",
