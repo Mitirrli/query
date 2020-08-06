@@ -13,11 +13,13 @@
         "php": ">=7.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
-            "Mitirrli\\TpQuery\\": "./src/"
+            "Mitirrli\\TpQuery\\": "./src/",
+            "Mitirrli\\TpQuery\\Tests": "./tests"
         }
     },
     "scripts": {
