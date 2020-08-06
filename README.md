@@ -1,6 +1,12 @@
-## Trait实现多继承，实现代码的复用，链式调用简化了代码，易于调试
+<h1 align="center"> Thinkphp query </h1>
+<p align="center">:rainbow: 用于tp5的查询封装</p>
+
+[![Total Downloads](https://poser.pugx.org/mitirrli/tp-query/downloads)](https://packagist.org/packages/mitirrli/tp-query)
+[![Latest Stable Version](https://poser.pugx.org/mitirrli/tp-query/v/stable)](https://packagist.org/packages/mitirrli/tp-query)
+[![Latest Unstable Version](https://poser.pugx.org/mitirrli/tp-query/v/unstable)](https://packagist.org/packages/mitirrli/tp-query)
+<a href="https://packagist.org/packages/mitirrli/tp-query"><img src="https://poser.pugx.org/mitirrli/tp-query/license" alt="License"></a>
   
-### quickStart
+### QuickStart
 ```
 use Mitirrli\TpQuery\Constant\Search;
 
