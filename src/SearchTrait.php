@@ -27,7 +27,7 @@ trait SearchTrait
     /**
      * 获取用户参数.
      */
-    public function param(array $params): SearchTrait
+    public function param(array $params)
     {
         $this->params = $params;
 
@@ -38,7 +38,7 @@ trait SearchTrait
      * 设置当前默认数组.
      * @param $init array
      */
-    public function initial(array $init): SearchTrait
+    public function initial(array $init)
     {
         $this->init = $init;
 
@@ -50,10 +50,10 @@ trait SearchTrait
      * @param string $key 参数名
      * @param int $fuzzy 0精确查询,1模糊查询,2右模糊查询
      */
-    public function key(string $key, int $fuzzy = Search::PERCENT_NONE): SearchTrait
+    public function key(string $key, int $fuzzy = Search::PERCENT_NONE)
     {
         if (isset($this->params[$key]) && ! empty($this->params[$key])) {
-            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params['key'], $fuzzy)] : $this->params[$key];
+            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$key], $fuzzy)] : $this->params[$key];
         }
 
         return $this;
@@ -65,10 +65,10 @@ trait SearchTrait
      * @param int $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
      * @param string $name 统一的参数名
      */
-    public function orKey(string $key, int $fuzzy = Search::PERCENT_NONE, string $name = ''): SearchTrait
+    public function orKey(string $key, int $fuzzy = Search::PERCENT_NONE, string $name = '')
     {
         if (isset($this->params[$name]) && ! empty($this->params[$name])) {
-            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params['key'], $fuzzy)] : $this->params[$name];
+            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$key], $fuzzy)] : $this->params[$name];
         }
 
         return $this;
