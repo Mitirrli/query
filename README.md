@@ -5,8 +5,18 @@
 [![Latest Stable Version](https://poser.pugx.org/mitirrli/tp-query/v/stable)](https://packagist.org/packages/mitirrli/tp-query)
 [![Latest Unstable Version](https://poser.pugx.org/mitirrli/tp-query/v/unstable)](https://packagist.org/packages/mitirrli/tp-query)
 <a href="https://packagist.org/packages/mitirrli/tp-query"><img src="https://poser.pugx.org/mitirrli/tp-query/license" alt="License"></a>
-  
-### QuickStart
+
+## 环境需求
+
+- PHP >= 7.0
+
+## 安装
+
+```shell
+$ composer require "mitirrli/tp-query"
+```
+
+## QuickStart
 ```
 use Mitirrli\TpQuery\Constant\Search;
 
