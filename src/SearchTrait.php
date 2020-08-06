@@ -52,7 +52,7 @@ trait SearchTrait
      */
     public function key(string $key, int $fuzzy = Search::PERCENT_NONE)
     {
-        if (isset($this->params[$key]) && ! empty($this->params[$key])) {
+        if (isset($this->params[$key]) && !empty($this->params[$key])) {
             $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$key], $fuzzy)] : $this->params[$key];
         }
 
@@ -62,13 +62,13 @@ trait SearchTrait
     /**
      * orWhere查询.
      * @param string $key 参数名
-     * @param int $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
      * @param string $name 统一的参数名
+     * @param int $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
      */
-    public function orKey(string $key, int $fuzzy = Search::PERCENT_NONE, string $name = '')
+    public function orKey(string $key, string $name = '', int $fuzzy = Search::PERCENT_NONE)
     {
-        if (isset($this->params[$name]) && ! empty($this->params[$name])) {
-            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$key], $fuzzy)] : $this->params[$name];
+        if (isset($this->params[$name]) && !empty($this->params[$name])) {
+            $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$name], $fuzzy)] : $this->params[$name];
         }
 
         return $this;
