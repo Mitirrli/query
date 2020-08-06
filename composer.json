@@ -19,7 +19,7 @@
     "autoload": {
         "psr-4": {
             "Mitirrli\\TpQuery\\": "./src/",
-            "Mitirrli\\TpQuery\\Tests": "./tests"
+            "Mitirrli\\TpQuery\\Tests\\": "./tests"
         }
     },
     "scripts": {
