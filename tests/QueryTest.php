@@ -41,7 +41,7 @@ class QueryTest extends TestCase
     /**
      * test function key.
      */
-    public function testAccurateKey()
+    public function testKey()
     {
         //Test 1. accurate search
         $key = 'name';
