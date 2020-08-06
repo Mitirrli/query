@@ -2,6 +2,7 @@
 <p align="center">:rainbow: 用于tp5的查询封装</p>
 
 [![Build Status](https://travis-ci.org/Mitirrli/query.svg?branch=master)](https://travis-ci.org/Mitirrli/query)
+![StyleCI build status](https://github.styleci.io/repos/209699257/shield) 
 [![Total Downloads](https://poser.pugx.org/mitirrli/tp-query/downloads)](https://packagist.org/packages/mitirrli/tp-query)
 [![Latest Stable Version](https://poser.pugx.org/mitirrli/tp-query/v/stable)](https://packagist.org/packages/mitirrli/tp-query)
 [![Latest Unstable Version](https://poser.pugx.org/mitirrli/tp-query/v/unstable)](https://packagist.org/packages/mitirrli/tp-query)
