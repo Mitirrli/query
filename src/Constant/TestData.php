@@ -18,4 +18,10 @@ abstract class TestData
         'language' => 'php',
         'test' => 'phpUnit'
     ];
+
+    const TEST_DATA3 = [
+        'JS' => 'HTML',
+        'PHP' => 'MYSQL',
+        'C' => 'DLL'
+    ];
 }
