@@ -15,9 +15,9 @@ final class SearchParam
     {
         switch ($fuzzy) {
             case Search::PERCENT_RIGHT:
-                return $key . '%';
+                return $key.'%';
             default:
-                return '%' . $key . '%';
+                return '%'.$key.'%';
         }
     }
 }
