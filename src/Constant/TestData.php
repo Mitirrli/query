@@ -26,11 +26,15 @@ abstract class TestData
     ];
 
     const TEST_DATA4 = [
-        'UN_UNIQUE_KEY' => [1, 1, 2, 3, 4]
+        'UN_UNIQUE_KEY' => [1, 1, 2, 3, 4],
     ];
 
     const TEST_DATA5 = [
         'start' => 0,
-        'end' => 22
+        'end' => 22,
+    ];
+
+    const TEST_DATA6 = [
+        'UN_UNIQUE_KEY' => '1,1,2,3,4'
     ];
 }

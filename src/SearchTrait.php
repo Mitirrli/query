@@ -100,8 +100,6 @@ trait SearchTrait
      * Between查询.
      *
      * @param string $key 参数名
-     * @param string $start
-     * @param string $end
      */
     public function betweenKey(string $key, string $start = '', string $end = '')
     {
