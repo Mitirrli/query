@@ -35,6 +35,6 @@ abstract class TestData
     ];
 
     const TEST_DATA6 = [
-        'UN_UNIQUE_KEY' => '1,1,2,3,4'
+        'UN_UNIQUE_KEY' => '1,1,2,3,4',
     ];
 }

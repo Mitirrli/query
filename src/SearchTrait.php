@@ -51,8 +51,8 @@ trait SearchTrait
     /**
      * 赋值
      *
-     * @param string $key 参数名
-     * @param int $fuzzy 0精确查询,1模糊查询,2右模糊查询
+     * @param string $key   参数名
+     * @param int    $fuzzy 0精确查询,1模糊查询,2右模糊查询
      */
     public function key(string $key, int $fuzzy = Search::PERCENT_NONE)
     {
@@ -66,9 +66,9 @@ trait SearchTrait
     /**
      * orWhere查询.
      *
-     * @param string $key 参数名
-     * @param string $name 统一的参数名
-     * @param int $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
+     * @param string $key   参数名
+     * @param string $name  统一的参数名
+     * @param int    $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
      */
     public function orKey(string $key, string $name = '', int $fuzzy = Search::PERCENT_NONE)
     {
@@ -88,7 +88,7 @@ trait SearchTrait
     {
         if (isset($this->params[$key]) && !empty($this->params[$key])) {
             if (is_string($this->params[$key])) {
-                $this->params[$key] = explode(',' , $this->params[$key]);
+                $this->params[$key] = explode(',', $this->params[$key]);
             }
             $this->init[$key] = ['IN', array_unique($this->params[$key])];
         }
