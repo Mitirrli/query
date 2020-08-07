@@ -86,7 +86,7 @@ trait SearchTrait
      */
     public function inKey(string $key)
     {
-        if(isset($this->params[$key]) && !empty($this->params[$key])){
+        if (isset($this->params[$key]) && !empty($this->params[$key])) {
             $this->init[$key] = ['IN', array_unique($this->params[$key])];
         }
 
@@ -97,8 +97,6 @@ trait SearchTrait
      * Between查询.
      *
      * @param string $key 参数名
-     * @param string $start
-     * @param string $end
      */
     public function betweenKey(string $key, string $start = '', string $end = '')
     {
