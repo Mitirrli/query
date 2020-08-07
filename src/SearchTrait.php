@@ -80,6 +80,57 @@ trait SearchTrait
     }
 
     /**
+     * In查询.
+     *
+     * @param string $key 参数名
+     */
+    public function inKey(string $key)
+    {
+        if(isset($this->params[$key]) && !empty($this->params[$key])){
+            $this->init[$key] = ['IN', array_unique($this->params[$key])];
+        }
+
+        return $this;
+    }
+
+    /**
+     * Between查询.
+     *
+     * @param string $key 参数名
+     * @param string $start
+     * @param string $end
+     */
+    public function betweenKey(string $key, string $start = '', string $end = '')
+    {
+        if (isset($this->params[$end]) && isset($this->params[$start])) {
+            $this->init[$key] = ['BETWEEN', [$this->params[$start], $this->params[$end]]];
+        }
+
+        if (!isset($this->params[$end]) && isset($this->params[$start])) {
+            $this->init[$key] = ['>=', $this->params[$start]];
+        }
+        if (!isset($this->params[$start]) && isset($this->params[$end])) {
+            $this->init[$key] = ['<=', $this->params[$end]];
+        }
+
+        return $this;
+    }
+
+    /**
+     * Unset无用的参数.
+     *
+     * @param string $key 参数名
+     */
+    public function unsetKey(...$key)
+    {
+        array_map(function ($value) {
+            unset($this->init[$value]);
+        }, $key);
+
+        return $this;
+    }
+
+    /**
      * 获取结果.
      */
     public function result(): array
