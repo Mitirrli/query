@@ -23,7 +23,7 @@ $ composer require "mitirrli/tp-query"
 use Mitirrli\TpQuery\Constant\Search;
 
 $this->param($params)
-     ->initial(['initial' => 0]) //set an initial value
+     ->initial(['initial' => 0]) //Set an initial value
      ->key('name', Search::PERCENT_RIGHT) //Right fuzzy search
      ->key('avatar') //Accurate search
      ->key('phone', Search::PERCENT_ALL) //All fuzzy search
