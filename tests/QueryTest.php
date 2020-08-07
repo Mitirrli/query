@@ -60,7 +60,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], TestData::TEST_DATA2[$key].'%');
+        self::assertEquals($test2[1], TestData::TEST_DATA2[$key] . '%');
 
         //Test 3. all fuzzy search
         $key = 'test';
@@ -71,7 +71,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], '%'.TestData::TEST_DATA2[$key].'%');
+        self::assertEquals($test2[1], '%' . TestData::TEST_DATA2[$key] . '%');
     }
 
     /**
@@ -106,7 +106,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$new_key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], TestData::TEST_DATA3[$key].'%');
+        self::assertEquals($test2[1], TestData::TEST_DATA3[$key] . '%');
 
         //Test 2. right fuzzy search
         $key = 'C';
@@ -118,7 +118,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$new_key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], '%'.TestData::TEST_DATA3[$key].'%');
+        self::assertEquals($test2[1], '%' . TestData::TEST_DATA3[$key] . '%');
     }
 
     /**
@@ -126,12 +126,18 @@ class QueryTest extends TestCase
      */
     public function testInKey()
     {
+        //Test 1. Array
         $key = 'UN_UNIQUE_KEY';
         $result = $this->param(TestData::TEST_DATA4)->inKey($key)->result();
-
         self::assertEquals($result[$key][0], 'IN');
         self::assertIsArray($result);
         self::assertEquals($result[$key][1], array_unique(TestData::TEST_DATA4[$key]));
+
+        //Test 2. String
+        $result = $this->param(TestData::TEST_DATA6)->inKey($key)->result();
+        self::assertEquals($result[$key][0], 'IN');
+        self::assertIsArray($result);
+        self::assertEquals($result[$key][1], array_unique(explode(',', TestData::TEST_DATA6[$key])));
     }
 
     /**
