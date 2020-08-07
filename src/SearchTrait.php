@@ -49,7 +49,7 @@ trait SearchTrait
     }
 
     /**
-     * 赋值
+     * 赋值.
      *
      * @param string $key   参数名
      * @param int    $fuzzy 0精确查询,1模糊查询,2右模糊查询
@@ -64,13 +64,13 @@ trait SearchTrait
     }
 
     /**
-     * orWhere查询.
+     * 重命名 And 赋值.
      *
      * @param string $key   参数名
-     * @param string $name  统一的参数名
+     * @param string $name  先前的参数名
      * @param int    $fuzzy 0精确查询,1左右模糊查询,2右模糊查询
      */
-    public function orKey(string $key, string $name = '', int $fuzzy = Search::PERCENT_NONE)
+    public function renameKey(string $key, string $name = '', int $fuzzy = Search::PERCENT_NONE)
     {
         if (isset($this->params[$name]) && !empty($this->params[$name])) {
             $this->init[$key] = $fuzzy ? ['LIKE', SearchParam::getParam($this->params[$name], $fuzzy)] : $this->params[$name];
