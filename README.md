@@ -27,6 +27,10 @@ $this->param($params)
      ->key('name', Search::PERCENT_RIGHT) //Right fuzzy search
      ->key('avatar') //Accurate search
      ->key('phone', Search::PERCENT_ALL) //All fuzzy search
+     ->inKey('type') //Array search
+     ->betweenKey('created_at', 'started_at', 'ended_at') //Between search
+     ->orKey('backend', 'frontend') //Multi param
+     ->unsetKey('initial') //Unset param
      ->result(); //Get result
 ```  
   
