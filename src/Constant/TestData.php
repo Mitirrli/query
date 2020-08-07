@@ -24,4 +24,13 @@ abstract class TestData
         'PHP' => 'MYSQL',
         'C' => 'DLL',
     ];
+
+    const TEST_DATA4 = [
+        'UN_UNIQUE_KEY' => [1, 1, 2, 3, 4]
+    ];
+
+    const TEST_DATA5 = [
+        'start' => 0,
+        'end' => 22
+    ];
 }
