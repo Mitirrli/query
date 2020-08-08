@@ -64,7 +64,7 @@ trait SearchTrait
     }
 
     /**
-     * 重命名 And 赋值.
+     * 重命名参数并赋值.
      *
      * @param string $key   参数名
      * @param string $name  先前的参数名
