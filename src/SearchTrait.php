@@ -116,12 +116,13 @@ trait SearchTrait
 
         return $this;
     }
-    
+
     /**
      * 倒序某Key之前.
      *
-     * @param string $key 前端的key
+     * @param string $key  前端的key
      * @param string $name 数据库的字段
+     *
      * @return $this
      */
     public function beforeKey(string $key, string $name)
@@ -135,9 +136,10 @@ trait SearchTrait
 
     /**
      * 正序某Key之后.
-     * 
-     * @param string $key 前端的key
+     *
+     * @param string $key  前端的key
      * @param string $name 数据库的字段
+     *
      * @return $this
      */
     public function afterKey(string $key, string $name)
