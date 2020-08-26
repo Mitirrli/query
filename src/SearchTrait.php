@@ -116,6 +116,36 @@ trait SearchTrait
 
         return $this;
     }
+    
+    /**
+     * 正序某Key之前.
+     *
+     * @param string $key
+     * @return $this
+     */
+    public function beforeKey(string $key)
+    {
+        if (isset($this->params[$key]) && !empty($this->params[$key])) {
+            $this->init[$key] = ['<', $this->params[$key]];
+        }
+
+        return $this;
+    }
+
+    /**
+     * 正序某Key之后.
+     * 
+     * @param string $key
+     * @return $this
+     */
+    public function afterKey(string $key)
+    {
+        if (isset($this->params[$key]) && !empty($this->params[$key])) {
+            $this->init[$key] = ['>', $this->params[$key]];
+        }
+
+        return $this;
+    }
 
     /**
      * Unset无用的参数.
