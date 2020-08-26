@@ -118,15 +118,16 @@ trait SearchTrait
     }
     
     /**
-     * 正序某Key之前.
+     * 倒序某Key之前.
      *
-     * @param string $key
+     * @param string $key 前端的key
+     * @param string $name 数据库的字段
      * @return $this
      */
-    public function beforeKey(string $key)
+    public function beforeKey(string $key, string $name)
     {
         if (isset($this->params[$key]) && !empty($this->params[$key])) {
-            $this->init[$key] = ['<', $this->params[$key]];
+            $this->init[$name] = ['<', $this->params[$key]];
         }
 
         return $this;
@@ -135,13 +136,14 @@ trait SearchTrait
     /**
      * 正序某Key之后.
      * 
-     * @param string $key
+     * @param string $key 前端的key
+     * @param string $name 数据库的字段
      * @return $this
      */
-    public function afterKey(string $key)
+    public function afterKey(string $key, string $name)
     {
         if (isset($this->params[$key]) && !empty($this->params[$key])) {
-            $this->init[$key] = ['>', $this->params[$key]];
+            $this->init[$name] = ['>', $this->params[$key]];
         }
 
         return $this;
