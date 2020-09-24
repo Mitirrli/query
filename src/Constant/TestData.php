@@ -39,6 +39,6 @@ abstract class TestData
     ];
 
     const TEST_DATA7 = [
-        'key' => 1111
+        'key' => 1111,
     ];
 }
