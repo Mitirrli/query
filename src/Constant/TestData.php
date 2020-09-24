@@ -37,4 +37,8 @@ abstract class TestData
     const TEST_DATA6 = [
         'UN_UNIQUE_KEY' => '1,1,2,3,4',
     ];
+
+    const TEST_DATA7 = [
+        'key' => 1111
+    ];
 }

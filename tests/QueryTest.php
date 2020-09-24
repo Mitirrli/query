@@ -3,9 +3,9 @@
 namespace Mitirrli\TpQuery\Tests;
 
 use Mitirrli\TpQuery\Constant\Search;
-use PHPUnit\Framework\TestCase;
-use Mitirrli\TpQuery\SearchTrait;
 use Mitirrli\TpQuery\Constant\TestData;
+use Mitirrli\TpQuery\SearchTrait;
+use PHPUnit\Framework\TestCase;
 
 class QueryTest extends TestCase
 {
@@ -60,7 +60,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], TestData::TEST_DATA2[$key].'%');
+        self::assertEquals($test2[1], TestData::TEST_DATA2[$key] . '%');
 
         //Test 3. all fuzzy search
         $key = 'test';
@@ -71,7 +71,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], '%'.TestData::TEST_DATA2[$key].'%');
+        self::assertEquals($test2[1], '%' . TestData::TEST_DATA2[$key] . '%');
     }
 
     /**
@@ -106,7 +106,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$new_key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], TestData::TEST_DATA3[$key].'%');
+        self::assertEquals($test2[1], TestData::TEST_DATA3[$key] . '%');
 
         //Test 2. right fuzzy search
         $key = 'C';
@@ -118,7 +118,7 @@ class QueryTest extends TestCase
 
         self::assertIsArray($test2 = $property->getValue($object)[$new_key]);
         self::assertEquals($test2[0], 'LIKE');
-        self::assertEquals($test2[1], '%'.TestData::TEST_DATA3[$key].'%');
+        self::assertEquals($test2[1], '%' . TestData::TEST_DATA3[$key] . '%');
     }
 
     /**
@@ -164,6 +164,34 @@ class QueryTest extends TestCase
         $test3 = $this->param(TestData::TEST_DATA5)->betweenKey($key, 'start')->result();
         self::assertEquals($test3[$key][0], '>=');
         self::assertEquals($test3[$key][1], TestData::TEST_DATA5['start']);
+    }
+
+    /**
+     * test function beforeKey.
+     */
+    public function testBeforeKey()
+    {
+        //Test 1. ISSET AND !EMPTY
+        $key = 'key';
+        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key, 'result')->result();
+
+        self::assertIsArray($test1);
+        self::assertEquals($test1[$key][0], '<');
+        self::assertEquals($test1[$key][1], TestData::TEST_DATA7[$key]);
+    }
+
+    /**
+     * test function afterKey.
+     */
+    public function testAfterKey()
+    {
+        //Test 1. ISSET AND !EMPTY
+        $key = 'key';
+        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key, 'result')->result();
+
+        self::assertIsArray($test1);
+        self::assertEquals($test1[$key][0], '>');
+        self::assertEquals($test1[$key][1], TestData::TEST_DATA7[$key]);
     }
 
     /**
