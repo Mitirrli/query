@@ -29,6 +29,8 @@ $this->param($params)
      ->key('phone', Search::PERCENT_ALL) //All fuzzy search
      ->inKey('type') //Array search
      ->betweenKey('created_at', 'started_at', 'ended_at') //Between search
+     ->beforeKey('id', 'id'), //Before Key
+     ->afterKey('id', 'id'), //After kay
      ->renameKey('backend', 'frontend') //Rename param
      ->unsetKey('initial') //Unset param
      ->result(); //Get result
