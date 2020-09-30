@@ -171,13 +171,21 @@ class QueryTest extends TestCase
      */
     public function testBeforeKey()
     {
-        //Test 1. ISSET AND !EMPTY
+        //Test 1. One param
         $key = 'key';
-        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key, $key)->result();
+        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key)->result();
 
         self::assertIsArray($test1);
         self::assertEquals($test1[$key][0], '<');
         self::assertEquals($test1[$key][1], TestData::TEST_DATA7[$key]);
+        
+        //Test 2. Two params
+        $key = 'key';
+        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key, 'result')->result();
+
+        self::assertIsArray($test1);
+        self::assertEquals($test1['result'][0], '<');
+        self::assertEquals($test1['result'][1], TestData::TEST_DATA7[$key]);
     }
 
     /**
@@ -185,13 +193,21 @@ class QueryTest extends TestCase
      */
     public function testAfterKey()
     {
-        //Test 1. ISSET AND !EMPTY
+        //Test 1. One param
         $key = 'key';
-        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key, $key)->result();
+        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key)->result();
 
         self::assertIsArray($test1);
         self::assertEquals($test1[$key][0], '>');
         self::assertEquals($test1[$key][1], TestData::TEST_DATA7[$key]);
+        
+        //Test 2. Two param
+        $key = 'key';
+        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key, 'result')->result();
+
+        self::assertIsArray($test1);
+        self::assertEquals($test1['result'][0], '>');
+        self::assertEquals($test1['result'][1], TestData::TEST_DATA7[$key]);
     }
 
     /**
