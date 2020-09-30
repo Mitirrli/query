@@ -1,5 +1,5 @@
-<h1 align="center"> Thinkphp Query </h1>
-<p align="center">:rainbow: use for thinkphp query.</p>
+<h1 align="center"> Orm Query </h1>
+<p align="center">:rainbow: use for orm query.</p>
 
 [![Build Status](https://travis-ci.org/Mitirrli/query.svg?branch=master)](https://travis-ci.org/Mitirrli/query)
 ![StyleCI build status](https://github.styleci.io/repos/209699257/shield) 
@@ -29,8 +29,8 @@ $this->param($params)
      ->key('phone', Search::PERCENT_ALL) //All fuzzy search
      ->inKey('type') //Array search
      ->betweenKey('created_at', 'started_at', 'ended_at') //Between search
-     ->beforeKey('id', 'id'), //Before Key
-     ->afterKey('id', 'id'), //After kay
+     ->beforeKey('id'), //Before Key
+     ->afterKey('id'), //After kay
      ->renameKey('backend', 'frontend') //Rename param
      ->unsetKey('initial') //Unset param
      ->result(); //Get result
