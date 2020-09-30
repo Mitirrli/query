@@ -120,7 +120,7 @@ trait SearchTrait
     /**
      * 倒序某Key之前.
      *
-     * @param string $key  前端的key
+     * @param string      $key  前端的key
      * @param string|null $name 数据库的字段(非必传字段)
      *
      * @return $this
@@ -137,7 +137,7 @@ trait SearchTrait
     /**
      * 正序某Key之后.
      *
-     * @param string $key  前端的key
+     * @param string      $key  前端的key
      * @param string|null $name 数据库的字段(非必传字段)
      *
      * @return $this
