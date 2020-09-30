@@ -173,7 +173,7 @@ class QueryTest extends TestCase
     {
         //Test 1. ISSET AND !EMPTY
         $key = 'key';
-        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key, 'result')->result();
+        $test1 = $this->param(TestData::TEST_DATA7)->beforeKey($key, $key)->result();
 
         self::assertIsArray($test1);
         self::assertEquals($test1[$key][0], '<');
@@ -187,7 +187,7 @@ class QueryTest extends TestCase
     {
         //Test 1. ISSET AND !EMPTY
         $key = 'key';
-        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key, 'result')->result();
+        $test1 = $this->param(TestData::TEST_DATA7)->afterKey($key, $key)->result();
 
         self::assertIsArray($test1);
         self::assertEquals($test1[$key][0], '>');
