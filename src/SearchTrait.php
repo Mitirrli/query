@@ -121,11 +121,11 @@ trait SearchTrait
      * 倒序某Key之前.
      *
      * @param string $key  前端的key
-     * @param string $name 数据库的字段(非必传字段)
+     * @param string|null $name 数据库的字段(非必传字段)
      *
      * @return $this
      */
-    public function beforeKey(string $key, string $name)
+    public function beforeKey(string $key, string $name = null)
     {
         if (isset($this->params[$key]) && !empty($this->params[$key])) {
             $this->init[$name ?? $key] = ['<', $this->params[$key]];
@@ -138,11 +138,11 @@ trait SearchTrait
      * 正序某Key之后.
      *
      * @param string $key  前端的key
-     * @param string $name 数据库的字段(非必传字段)
+     * @param string|null $name 数据库的字段(非必传字段)
      *
      * @return $this
      */
-    public function afterKey(string $key, string $name)
+    public function afterKey(string $key, string $name = null)
     {
         if (isset($this->params[$key]) && !empty($this->params[$key])) {
             $this->init[$name ?? $key] = ['>', $this->params[$key]];
