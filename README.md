@@ -1,4 +1,4 @@
-<h1 align="center"> warning:Deprecated </h1>
+<h1 align="center"> WARNING : Deprecated </h1>
 <p align="center">:rainbow: This package is deprecated, please use Mitirrli/build-query.</p>
 
 [![Build Status](https://travis-ci.org/Mitirrli/query.svg?branch=master)](https://travis-ci.org/Mitirrli/query)
